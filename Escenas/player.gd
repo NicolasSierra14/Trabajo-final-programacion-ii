@@ -3,6 +3,7 @@ class_name Player
 @export var color_actual : String = ""
 @export var color_secundario : String = ""
 var escena_pocion = preload("res://Escenas/pocion.tscn")
+var instancia : Pocion
 
 
 func _physics_process(delta):
@@ -19,24 +20,29 @@ func _physics_process(delta):
 		lanzar_pocion()
 
 	super._physics_process(delta)
-	VariablesGlobales.sprite_pocion_actual = color_actual
 
-var instancia : CharacterBody2D
 
 func gestionar_colores():
 	if Input.is_action_just_pressed("Rojo"):
 		print("Tecla 1 presionada")
 		seleccionar_o_combinar("Rojo")
-		instancia = escena_pocion.instantiate()
-		add_child(instancia)
+		crear_instancia_pocion(color_actual)
 	elif Input.is_action_just_pressed("Azul"):
 		print("Tecla 2 presionada")
 		seleccionar_o_combinar("Azul")
-		instancia = escena_pocion.instantiate()
-		add_child(instancia)
+		crear_instancia_pocion(color_actual)
 	elif Input.is_action_just_pressed("Amarillo"):
 		print("Tecla 3 presionada")
 		seleccionar_o_combinar("Amarillo")
+		crear_instancia_pocion(color_actual)
+
+func crear_instancia_pocion(color):
+	if instancia:
+		if not instancia.lanzada:
+			instancia.queue_free()
+	instancia = escena_pocion.instantiate()
+	instancia.tipo_color = color
+	add_child(instancia)
 
 func seleccionar_o_combinar(nuevo_color: String):
 	if color_actual == "":
@@ -68,4 +74,8 @@ func lanzar_pocion():
 	if color_actual != "":
 		color_actual = ""
 		color_secundario = ""
-	
+	if instancia:
+		if instancia.lanzada: return
+		instancia.lanzada = true
+		instancia.reparent(get_tree().current_scene)
+		instancia.movimiento_pocion()

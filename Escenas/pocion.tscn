@@ -2,13 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://dk6y1lgb70q0a" path="res://red-potion-bottle-with-sparkles-isolated-on-transparent-background-png.png" id="1_avpbl"]
 [ext_resource type="Script" uid="uid://qre0plsynyau" path="res://Escenas/pocion.gd" id="1_mm1sl"]
+[ext_resource type="Texture2D" uid="uid://n75uh6p1yj6n" path="res://Pocion amarilla.png" id="2_w44ti"]
 [ext_resource type="Texture2D" uid="uid://dmxdaj23rd5ka" path="res://Pocion.png" id="3_81t8v"]
+[ext_resource type="Texture2D" uid="uid://coplpwgk3e4c3" path="res://Pocion azul.png" id="3_358k8"]
+[ext_resource type="Texture2D" uid="uid://cxhblnijoqc1m" path="res://Pocion naranja.png" id="4_3kyll"]
+[ext_resource type="Texture2D" uid="uid://ba2on2v30yfgl" path="res://Pocion verde.png" id="6_wkp77"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i3th5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_avpbl")
+"texture": ExtResource("2_w44ti")
 }],
 "loop": true,
 "name": &"amarillo",
@@ -16,7 +20,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_81t8v")
+"texture": ExtResource("3_358k8")
 }],
 "loop": true,
 "name": &"azul",
@@ -24,7 +28,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_avpbl")
+"texture": ExtResource("4_3kyll")
 }],
 "loop": true,
 "name": &"naranja",
@@ -40,7 +44,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_avpbl")
+"texture": ExtResource("6_wkp77")
 }],
 "loop": true,
 "name": &"verde",
@@ -48,7 +52,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_avpbl")
+"texture": ExtResource("3_81t8v")
 }],
 "loop": true,
 "name": &"violeta",
@@ -66,7 +70,7 @@ script = ExtResource("1_mm1sl")
 [node name="SpritePocion" type="AnimatedSprite2D" parent="." unique_id=35052876]
 scale = Vector2(0.055, 0.055)
 sprite_frames = SubResource("SpriteFrames_i3th5")
-animation = &"azul"
+animation = &"violeta"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1747486054]
 scale = Vector2(0.055, 0.055)
