@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://fhrngchd5dji"]
+
+[ext_resource type="Texture2D" uid="uid://dk6y1lgb70q0a" path="res://red-potion-bottle-with-sparkles-isolated-on-transparent-background-png.png" id="1_avpbl"]
+[ext_resource type="Script" uid="uid://qre0plsynyau" path="res://Escenas/pocion.gd" id="1_mm1sl"]
+[ext_resource type="Texture2D" uid="uid://dmxdaj23rd5ka" path="res://Pocion.png" id="3_81t8v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3th5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_avpbl")
+}],
+"loop": true,
+"name": &"amarillo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_81t8v")
+}],
+"loop": true,
+"name": &"azul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_avpbl")
+}],
+"loop": true,
+"name": &"naranja",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_avpbl")
+}],
+"loop": true,
+"name": &"rojo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_avpbl")
+}],
+"loop": true,
+"name": &"verde",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_avpbl")
+}],
+"loop": true,
+"name": &"violeta",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3th5"]
+radius = 402.93
+
+[node name="Pocion" type="CharacterBody2D" unique_id=220988933]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_mm1sl")
+
+[node name="SpritePocion" type="AnimatedSprite2D" parent="." unique_id=35052876]
+scale = Vector2(0.055, 0.055)
+sprite_frames = SubResource("SpriteFrames_i3th5")
+animation = &"azul"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1747486054]
+scale = Vector2(0.055, 0.055)
+shape = SubResource("CircleShape2D_i3th5")

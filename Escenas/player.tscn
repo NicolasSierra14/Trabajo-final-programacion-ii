@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dyf541878i4co"]
+
+[ext_resource type="Script" uid="uid://cxie5gq16cprg" path="res://Escenas/player.gd" id="1_cnkc8"]
+[ext_resource type="Texture2D" uid="uid://65viy1bpj34t" path="res://Componentes/Player/spaceAstronauts_016.png" id="2_i8vih"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qgqwx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i8vih")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8vih"]
+radius = 22.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1296100437]
+scale = Vector2(3.155, 3.155)
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_cnkc8")
+vida = 100
+speed = 500.0
+gravity = 2500.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1446722052]
+sprite_frames = SubResource("SpriteFrames_qgqwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2144514555]
+shape = SubResource("CircleShape2D_i8vih")

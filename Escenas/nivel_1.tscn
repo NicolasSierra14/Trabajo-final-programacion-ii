@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://boy0d0nwt572g"]
+
+[ext_resource type="PackedScene" uid="uid://dyf541878i4co" path="res://Escenas/player.tscn" id="1_gj223"]
+[ext_resource type="PackedScene" uid="uid://dc5jesmp2jinu" path="res://Escenas/enemigo_rojo.tscn" id="2_hid1b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gj223"]
+size = Vector2(1959, 132.5)
+
+[node name="Nivel 1" type="Node2D" unique_id=1655722006]
+position = Vector2(453, 554)
+
+[node name="Player" parent="." unique_id=1296100437 instance=ExtResource("1_gj223")]
+position = Vector2(650, 276)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=33108462]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1077202493]
+position = Vector2(528, 436)
+shape = SubResource("RectangleShape2D_gj223")
+
+[node name="Enemigo" parent="." unique_id=255610722 instance=ExtResource("2_hid1b")]
+position = Vector2(1140, 259)

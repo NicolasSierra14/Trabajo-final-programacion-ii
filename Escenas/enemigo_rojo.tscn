@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dc5jesmp2jinu"]
+
+[ext_resource type="Script" uid="uid://bewcu4fhx8hpt" path="res://Escenas/clase_enemigo.gd" id="1_kvi5i"]
+[ext_resource type="Texture2D" uid="uid://djqvu6ya2nq6r" path="res://pokebola.png" id="2_qimeh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvi5i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qimeh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qimeh"]
+radius = 28.0
+
+[node name="Enemigo" type="CharacterBody2D" unique_id=255610722]
+scale = Vector2(2.92, 2.92)
+script = ExtResource("1_kvi5i")
+color_enemigo = "Rojo"
+metadata/_custom_type_script = "uid://bewcu4fhx8hpt"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=590354806]
+scale = Vector2(0.445, 0.445)
+sprite_frames = SubResource("SpriteFrames_kvi5i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117615322]
+shape = SubResource("CircleShape2D_qimeh")
