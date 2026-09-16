@@ -1,7 +1,7 @@
 extends Enemigo
 
 func _ready():
-	color_enemigo = "rojo"
+	color_enemigo = "Rojo"
 	direccion.x = -1
 
 func _physics_process(delta):

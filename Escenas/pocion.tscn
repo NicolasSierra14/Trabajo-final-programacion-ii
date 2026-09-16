@@ -60,12 +60,16 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3th5"]
-radius = 402.93
+radius = 234.54
 
-[node name="Pocion" type="CharacterBody2D" unique_id=220988933]
+[sub_resource type="CircleShape2D" id="CircleShape2D_w44ti"]
+radius = 13.6
+
+[node name="Pocion" type="CharacterBody2D" unique_id=220988933 node_paths=PackedStringArray("colison_color_enemigo")]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_mm1sl")
+colison_color_enemigo = NodePath("Area2D")
 
 [node name="SpritePocion" type="AnimatedSprite2D" parent="." unique_id=35052876]
 scale = Vector2(0.055, 0.055)
@@ -75,3 +79,11 @@ animation = &"violeta"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1747486054]
 scale = Vector2(0.055, 0.055)
 shape = SubResource("CircleShape2D_i3th5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=202814530]
+
+[node name="Colision_pocion" type="CollisionShape2D" parent="Area2D" unique_id=2072220247]
+shape = SubResource("CircleShape2D_w44ti")
+debug_color = Color(1, 0.023529412, 0.17254902, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
