@@ -10,7 +10,7 @@ size = Vector2(1959, 132.5)
 position = Vector2(453, 554)
 
 [node name="Player" parent="." unique_id=1296100437 instance=ExtResource("1_gj223")]
-position = Vector2(650, 276)
+position = Vector2(-279, 268)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=33108462]
 
@@ -19,4 +19,5 @@ position = Vector2(528, 436)
 shape = SubResource("RectangleShape2D_gj223")
 
 [node name="Enemigo" parent="." unique_id=255610722 instance=ExtResource("2_hid1b")]
-position = Vector2(1140, 259)
+position = Vector2(1258, -322.99994)
+gravity = 400.0

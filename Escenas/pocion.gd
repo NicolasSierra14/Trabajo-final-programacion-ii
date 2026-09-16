@@ -20,7 +20,6 @@ func _process(delta):
 func actualizar_visual_pocion():
 		if tipo_color == "Rojo":
 			sprite_pocion.play("rojo")
-			print("Es la pocion roja sprite")
 		elif tipo_color== "Azul":
 			sprite_pocion.play("azul")
 		elif tipo_color == "Amarillo":

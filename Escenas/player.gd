@@ -2,6 +2,8 @@ extends Entidad
 class_name Player
 @export var color_actual : String = ""
 @export var color_secundario : String = ""
+@export var cooldown_player : Timer 
+var puede_lanzar : bool = true
 var escena_pocion = preload("res://Escenas/pocion.tscn")
 var instancia : Pocion
 
@@ -74,8 +76,16 @@ func lanzar_pocion():
 	if color_actual != "":
 		color_actual = ""
 		color_secundario = ""
-	if instancia:
-		if instancia.lanzada: return
-		instancia.lanzada = true
-		instancia.reparent(get_tree().current_scene)
-		instancia.movimiento_pocion()
+	if puede_lanzar:
+		puede_lanzar = false
+		cooldown_player.start()
+		if instancia:
+			if instancia.lanzada: return
+			instancia.lanzada = true
+			instancia.reparent(get_tree().current_scene)
+			instancia.movimiento_pocion()
+
+
+
+func _on_cooldown_player_timeout():
+	puede_lanzar = true

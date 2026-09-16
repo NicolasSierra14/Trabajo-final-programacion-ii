@@ -17,11 +17,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_i8vih"]
 radius = 22.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1296100437]
+[node name="Player" type="CharacterBody2D" unique_id=1296100437 node_paths=PackedStringArray("cooldown_player")]
 scale = Vector2(3.155, 3.155)
 collision_layer = 8
 collision_mask = 5
 script = ExtResource("1_cnkc8")
+cooldown_player = NodePath("Cooldown_player")
 vida = 100
 speed = 500.0
 gravity = 2500.0
@@ -31,3 +32,8 @@ sprite_frames = SubResource("SpriteFrames_qgqwx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2144514555]
 shape = SubResource("CircleShape2D_i8vih")
+
+[node name="Cooldown_player" type="Timer" parent="." unique_id=1863495662]
+one_shot = true
+
+[connection signal="timeout" from="Cooldown_player" to="." method="_on_cooldown_player_timeout"]

@@ -17,8 +17,6 @@ func process_move(delta):
 	move_and_slide()
 
 
-
-
 func Muerte():
 	queue_free()
 
