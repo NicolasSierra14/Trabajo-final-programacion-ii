@@ -5,8 +5,8 @@ class_name Pocion
 var velocidad : float = 600.0
 var direccion : Vector2 = Vector2.RIGHT
 var gravedad : float = 980.0
-var velocidad_horizontal : float = 600.0
-var velocidad_inicial_vertical : float = -300.0
+var velocidad_horizontal : float = 1100.0
+var velocidad_inicial_vertical : float = -400.0
 var daño_pocion : float = 100
 @onready var sprite_pocion = $SpritePocion
 @export var colison_color_enemigo : Area2D
