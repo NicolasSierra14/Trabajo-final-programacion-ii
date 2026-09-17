@@ -13,7 +13,7 @@ func _physics_process(delta):
 	direccion = Vector2(direccion_x, 0)
 	
 	if is_on_floor() and Input.is_action_just_pressed("Saltar"):
-		velocity.y = -1000.0 # Impulso inicial hacia arriba
+		velocity.y = -600.0 # Impulso inicial hacia arriba
 	super._physics_process(delta)
 	
 	gestionar_colores()

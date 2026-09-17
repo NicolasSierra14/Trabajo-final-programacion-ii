@@ -5,8 +5,8 @@ class_name Pocion
 var velocidad : float = 600.0
 var direccion : Vector2 = Vector2.RIGHT
 var gravedad : float = 980.0
-var velocidad_horizontal : float = 1100.0
-var velocidad_inicial_vertical : float = -400.0
+var velocidad_horizontal : float = 200.0
+var velocidad_inicial_vertical : float = -200.0
 var daño_pocion : float = 100
 @onready var sprite_pocion = $SpritePocion
 @export var colison_color_enemigo : Area2D
@@ -15,9 +15,11 @@ var lanzada : bool = false
 
 func _process(delta):
 	actualizar_visual_pocion()
-	velocity.y += gravedad * delta
-	move_and_slide()
-
+	if lanzada:
+		velocity.y += gravedad * delta
+		move_and_slide()
+	if is_on_floor():
+		queue_free()
 
 func actualizar_visual_pocion():
 		if tipo_color == "Rojo":
@@ -37,6 +39,7 @@ func movimiento_pocion():
 	velocity = Vector2(50,50)
 	velocity.x = direccion.x * velocidad_horizontal
 	velocity.y = velocidad_inicial_vertical
+	
 
 
 func _on_area_2d_body_entered(body):

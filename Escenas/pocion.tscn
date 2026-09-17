@@ -60,10 +60,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3th5"]
-radius = 234.54
+radius = 29.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w44ti"]
-radius = 13.6
+radius = 1.65
 
 [node name="Pocion" type="CharacterBody2D" unique_id=220988933 node_paths=PackedStringArray("colison_color_enemigo")]
 collision_layer = 2
@@ -73,7 +73,7 @@ colison_color_enemigo = NodePath("Area2D")
 
 [node name="SpritePocion" type="AnimatedSprite2D" parent="." unique_id=35052876]
 texture_filter = 2
-scale = Vector2(1.405, 1.405)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_i3th5")
 animation = &"azul"
 

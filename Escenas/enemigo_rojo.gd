@@ -15,6 +15,5 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-
 func _on_cambio_de_lado_enemigo_rojo_timeout():
 	direccion.x *= -1
