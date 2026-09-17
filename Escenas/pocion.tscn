@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://fhrngchd5dji"]
 
-[ext_resource type="Texture2D" uid="uid://dk6y1lgb70q0a" path="res://red-potion-bottle-with-sparkles-isolated-on-transparent-background-png.png" id="1_avpbl"]
 [ext_resource type="Script" uid="uid://qre0plsynyau" path="res://Escenas/pocion.gd" id="1_mm1sl"]
-[ext_resource type="Texture2D" uid="uid://n75uh6p1yj6n" path="res://Pocion amarilla.png" id="2_w44ti"]
-[ext_resource type="Texture2D" uid="uid://dmxdaj23rd5ka" path="res://Pocion.png" id="3_81t8v"]
-[ext_resource type="Texture2D" uid="uid://coplpwgk3e4c3" path="res://Pocion azul.png" id="3_358k8"]
-[ext_resource type="Texture2D" uid="uid://cxhblnijoqc1m" path="res://Pocion naranja.png" id="4_3kyll"]
-[ext_resource type="Texture2D" uid="uid://ba2on2v30yfgl" path="res://Pocion verde.png" id="6_wkp77"]
+[ext_resource type="Texture2D" uid="uid://wwsf1mkamvq" path="res://tile_7_4.png" id="2_w44ti"]
+[ext_resource type="Texture2D" uid="uid://c5td4svyrscay" path="res://tile_7_10.png" id="3_w44ti"]
+[ext_resource type="Texture2D" uid="uid://u3wo68pjgkxs" path="res://tile_8_5.png" id="4_358k8"]
+[ext_resource type="Texture2D" uid="uid://dg88mrummx5er" path="res://tile_7_0.png" id="5_3kyll"]
+[ext_resource type="Texture2D" uid="uid://8ribcobhjgqy" path="res://tile_8_9.png" id="6_wkp77"]
+[ext_resource type="Texture2D" uid="uid://b0phcpbahmumn" path="res://tile_8_6.png" id="7_py0ac"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i3th5"]
 animations = [{
@@ -20,7 +20,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_358k8")
+"texture": ExtResource("3_w44ti")
 }],
 "loop": true,
 "name": &"azul",
@@ -28,7 +28,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_3kyll")
+"texture": ExtResource("4_358k8")
 }],
 "loop": true,
 "name": &"naranja",
@@ -36,7 +36,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_avpbl")
+"texture": ExtResource("5_3kyll")
 }],
 "loop": true,
 "name": &"rojo",
@@ -52,7 +52,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_81t8v")
+"texture": ExtResource("7_py0ac")
 }],
 "loop": true,
 "name": &"violeta",
@@ -72,9 +72,10 @@ script = ExtResource("1_mm1sl")
 colison_color_enemigo = NodePath("Area2D")
 
 [node name="SpritePocion" type="AnimatedSprite2D" parent="." unique_id=35052876]
-scale = Vector2(0.055, 0.055)
+texture_filter = 2
+scale = Vector2(1.405, 1.405)
 sprite_frames = SubResource("SpriteFrames_i3th5")
-animation = &"violeta"
+animation = &"azul"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1747486054]
 scale = Vector2(0.055, 0.055)
@@ -83,6 +84,7 @@ shape = SubResource("CircleShape2D_i3th5")
 [node name="Area2D" type="Area2D" parent="." unique_id=202814530]
 
 [node name="Colision_pocion" type="CollisionShape2D" parent="Area2D" unique_id=2072220247]
+texture_filter = 2
 shape = SubResource("CircleShape2D_w44ti")
 debug_color = Color(1, 0.023529412, 0.17254902, 0.41960785)
 
