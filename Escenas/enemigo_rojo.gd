@@ -1,5 +1,5 @@
 extends Enemigo
-@export var cambio_de_lado_enemigo : Timer 
+@export var cambio_de_lado_enemigo_rojo : Timer 
 
 func _ready():
 	color_enemigo = "Rojo"
