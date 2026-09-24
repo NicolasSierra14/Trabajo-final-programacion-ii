@@ -117,4 +117,4 @@ tile_set = SubResource("TileSet_lswwr")
 position = Vector2(-183.00002, 473)
 
 [node name="enemigo_azul" parent="." unique_id=1317687869 instance=ExtResource("4_3c2k2")]
-position = Vector2(-238, 479)
+position = Vector2(-109, 480)
