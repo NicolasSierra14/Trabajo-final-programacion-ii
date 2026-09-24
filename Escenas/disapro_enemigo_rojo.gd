@@ -7,6 +7,10 @@ var velocidad : float = 150
 func _physics_process(delta):
 	animacion_disparo_enemigo_rojo.play()
 	position += direccion * velocidad * delta
-	for objeto in get_overlapping_bodies():
-		if objeto is Player:
-			queue_free()
+
+func _on_body_entered(body):
+	if body is Enemigo:
+		return
+	if body is Player:
+		body.vida -= 10
+	queue_free()

@@ -20,9 +20,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("Lanzar"):
 		lanzar_pocion()
-
 	super._physics_process(delta)
-
+	if vida < 0:
+		Muerte()
 
 func gestionar_colores():
 	if Input.is_action_just_pressed("Rojo"):

@@ -50,6 +50,7 @@ animations = [{
 size = Vector2(11, 7)
 
 [node name="Disapro_enemigo_rojo" type="Area2D" unique_id=435604665 node_paths=PackedStringArray("animacion_disparo_enemigo_rojo")]
+collision_mask = 8
 script = ExtResource("1_5chb1")
 animacion_disparo_enemigo_rojo = NodePath("AnimatedSprite2D")
 
@@ -63,3 +64,5 @@ frame_progress = 0.16933866
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=836061081]
 position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_ivdir")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
