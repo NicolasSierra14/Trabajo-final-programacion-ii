@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://boi87awlj6r8o"]
+
+[ext_resource type="Script" uid="uid://cbwqkgosbgevd" path="res://Escenas/enemigo_azul.gd" id="1_3l7qi"]
+[ext_resource type="Texture2D" uid="uid://2l3plxgjfaaw" path="res://slime_por.png" id="2_3l7qi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_inlig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3l7qi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inlig"]
+size = Vector2(21.5, 14)
+
+[node name="enemigo_azul" type="CharacterBody2D" unique_id=1317687869 node_paths=PackedStringArray("cambio_de_lado_enemigo_azul")]
+script = ExtResource("1_3l7qi")
+cambio_de_lado_enemigo_azul = NodePath("Cambio_de_lado_azul")
+vida = 100
+speed = 40.0
+gravity = 250.0
+metadata/_custom_type_script = "uid://bewcu4fhx8hpt"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=794056892]
+position = Vector2(0.315, 0)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_inlig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1175455726]
+position = Vector2(1.5, 4)
+shape = SubResource("RectangleShape2D_inlig")
+
+[node name="Cambio_de_lado_azul" type="Timer" parent="." unique_id=1937199319]
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="Cambio_de_lado_azul" to="." method="_on_cambio_de_lado_azul_timeout"]
