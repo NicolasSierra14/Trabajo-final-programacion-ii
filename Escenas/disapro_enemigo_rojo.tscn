@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dp11swmu6vra5"]
 
 [ext_resource type="Script" uid="uid://chsp6ag1vislh" path="res://Escenas/disapro_enemigo_rojo.gd" id="1_5chb1"]
-[ext_resource type="Texture2D" uid="uid://deg3o6fxgynsn" path="res://All_Fire_Bullet_Pixel_16x16.png" id="1_ivdir"]
+[ext_resource type="Texture2D" uid="uid://deg3o6fxgynsn" path="res://Componentes/Texturas/All_Fire_Bullet_Pixel_16x16.png" id="1_ivdir"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5chb1"]
 atlas = ExtResource("1_ivdir")

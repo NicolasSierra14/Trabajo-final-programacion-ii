@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dyf541878i4co"]
 
 [ext_resource type="Script" uid="uid://cxie5gq16cprg" path="res://Escenas/player.gd" id="1_cnkc8"]
-[ext_resource type="Texture2D" uid="uid://dcrqgyqv6472" path="res://Cientifico sprite.png" id="2_i8vih"]
+[ext_resource type="Texture2D" uid="uid://dcrqgyqv6472" path="res://Componentes/Player/Cientifico sprite.png" id="2_i8vih"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qgqwx"]
 animations = [{

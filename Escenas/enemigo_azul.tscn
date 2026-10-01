@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://boi87awlj6r8o"]
 
 [ext_resource type="Script" uid="uid://cbwqkgosbgevd" path="res://Escenas/enemigo_azul.gd" id="1_3l7qi"]
-[ext_resource type="Texture2D" uid="uid://2l3plxgjfaaw" path="res://slime_por.png" id="2_3l7qi"]
+[ext_resource type="Texture2D" uid="uid://2l3plxgjfaaw" path="res://Componentes/Sprites/slime_por.png" id="2_3l7qi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_inlig"]
 animations = [{

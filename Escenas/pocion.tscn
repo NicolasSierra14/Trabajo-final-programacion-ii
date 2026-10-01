@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://fhrngchd5dji"]
 
 [ext_resource type="Script" uid="uid://qre0plsynyau" path="res://Escenas/pocion.gd" id="1_mm1sl"]
-[ext_resource type="Texture2D" uid="uid://wwsf1mkamvq" path="res://tile_7_4.png" id="2_w44ti"]
-[ext_resource type="Texture2D" uid="uid://c5td4svyrscay" path="res://tile_7_10.png" id="3_w44ti"]
-[ext_resource type="Texture2D" uid="uid://u3wo68pjgkxs" path="res://tile_8_5.png" id="4_358k8"]
-[ext_resource type="Texture2D" uid="uid://dg88mrummx5er" path="res://tile_7_0.png" id="5_3kyll"]
-[ext_resource type="Texture2D" uid="uid://8ribcobhjgqy" path="res://tile_8_9.png" id="6_wkp77"]
-[ext_resource type="Texture2D" uid="uid://b0phcpbahmumn" path="res://tile_8_6.png" id="7_py0ac"]
+[ext_resource type="Texture2D" uid="uid://wwsf1mkamvq" path="res://Componentes/Sprites/tile_7_4.png" id="2_w44ti"]
+[ext_resource type="Texture2D" uid="uid://c5td4svyrscay" path="res://Componentes/Sprites/tile_7_10.png" id="3_w44ti"]
+[ext_resource type="Texture2D" uid="uid://u3wo68pjgkxs" path="res://Componentes/Sprites/tile_8_5.png" id="4_358k8"]
+[ext_resource type="Texture2D" uid="uid://dg88mrummx5er" path="res://Componentes/Sprites/tile_7_0.png" id="5_3kyll"]
+[ext_resource type="Texture2D" uid="uid://8ribcobhjgqy" path="res://Componentes/Sprites/tile_8_9.png" id="6_wkp77"]
+[ext_resource type="Texture2D" uid="uid://b0phcpbahmumn" path="res://Componentes/Sprites/tile_8_6.png" id="7_py0ac"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i3th5"]
 animations = [{

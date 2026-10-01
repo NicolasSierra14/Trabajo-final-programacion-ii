@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcrqgyqv6472"
-path="res://.godot/imported/Cientifico sprite.png-3ca3e79ff7fe82605ec8a5d44e0b670f.ctex"
+uid="uid://c5td4svyrscay"
+path="res://.godot/imported/tile_7_10.png-98144918e84d1634e145dbe82d08fb4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cientifico sprite.png"
-dest_files=["res://.godot/imported/Cientifico sprite.png-3ca3e79ff7fe82605ec8a5d44e0b670f.ctex"]
+source_file="res://Componentes/Sprites/tile_7_10.png"
+dest_files=["res://.godot/imported/tile_7_10.png-98144918e84d1634e145dbe82d08fb4b.ctex"]
 
 [params]
 

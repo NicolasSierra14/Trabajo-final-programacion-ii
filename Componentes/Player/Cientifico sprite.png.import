@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg88mrummx5er"
-path="res://.godot/imported/tile_7_0.png-610769601d09935247b7698742cc621d.ctex"
+uid="uid://dcrqgyqv6472"
+path="res://.godot/imported/Cientifico sprite.png-604522d1d11ab4b29d1af906827aa97d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile_7_0.png"
-dest_files=["res://.godot/imported/tile_7_0.png-610769601d09935247b7698742cc621d.ctex"]
+source_file="res://Componentes/Player/Cientifico sprite.png"
+dest_files=["res://.godot/imported/Cientifico sprite.png-604522d1d11ab4b29d1af906827aa97d.ctex"]
 
 [params]
 
