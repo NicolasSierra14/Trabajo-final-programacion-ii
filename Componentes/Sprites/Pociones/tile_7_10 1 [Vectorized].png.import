@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0cqqerngmj6y"
-path="res://.godot/imported/slime_rojo.png-5756386c741c404220f5800c32a143be.ctex"
+uid="uid://da37jjegbxdm1"
+path="res://.godot/imported/tile_7_10 1 [Vectorized].png-2fb5ec8aacff0e29157d218dfdc27a7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Componentes/Sprites/slime_rojo.png"
-dest_files=["res://.godot/imported/slime_rojo.png-5756386c741c404220f5800c32a143be.ctex"]
+source_file="res://Componentes/Sprites/Pociones/tile_7_10 1 [Vectorized].png"
+dest_files=["res://.godot/imported/tile_7_10 1 [Vectorized].png-2fb5ec8aacff0e29157d218dfdc27a7c.ctex"]
 
 [params]
 

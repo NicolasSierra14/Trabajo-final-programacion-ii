@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djqvu6ya2nq6r"
-path="res://.godot/imported/pokebola.png-2df394b9dd1c1afdc0b0d064d22e5baa.ctex"
+uid="uid://2l3plxgjfaaw"
+path="res://.godot/imported/slime_por.png-48447741b3b2eb370a59c184628a73ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Componentes/Sprites/pokebola.png"
-dest_files=["res://.godot/imported/pokebola.png-2df394b9dd1c1afdc0b0d064d22e5baa.ctex"]
+source_file="res://Componentes/Sprites/Enemigos/slime_por.png"
+dest_files=["res://.godot/imported/slime_por.png-48447741b3b2eb370a59c184628a73ed.ctex"]
 
 [params]
 

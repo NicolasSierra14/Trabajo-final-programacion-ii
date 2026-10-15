@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcrqgyqv6472"
-path="res://.godot/imported/Cientifico sprite.png-604522d1d11ab4b29d1af906827aa97d.ctex"
+path="res://.godot/imported/Cientifico sprite.png-4b6e064a8b939a0f8daf89cb709dbf6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Componentes/Player/Cientifico sprite.png"
-dest_files=["res://.godot/imported/Cientifico sprite.png-604522d1d11ab4b29d1af906827aa97d.ctex"]
+source_file="res://Componentes/Sprites/Player/Cientifico sprite.png"
+dest_files=["res://.godot/imported/Cientifico sprite.png-4b6e064a8b939a0f8daf89cb709dbf6d.ctex"]
 
 [params]
 

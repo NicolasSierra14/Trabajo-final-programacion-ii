@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0phcpbahmumn"
-path="res://.godot/imported/tile_8_6.png-88ddbd239fdec828b8064b3faa41cb83.ctex"
+uid="uid://8ribcobhjgqy"
+path="res://.godot/imported/tile_8_9.png-44309825c4dac5a4366fb63ea127e44f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Componentes/Sprites/tile_8_6.png"
-dest_files=["res://.godot/imported/tile_8_6.png-88ddbd239fdec828b8064b3faa41cb83.ctex"]
+source_file="res://Componentes/Sprites/Pociones/tile_8_9.png"
+dest_files=["res://.godot/imported/tile_8_9.png-44309825c4dac5a4366fb63ea127e44f.ctex"]
 
 [params]
 

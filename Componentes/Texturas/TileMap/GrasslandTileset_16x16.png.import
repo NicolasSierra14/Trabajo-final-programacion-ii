@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deg3o6fxgynsn"
-path="res://.godot/imported/All_Fire_Bullet_Pixel_16x16.png-f6d38a6af8be6006fbcce61a14590c4a.ctex"
+uid="uid://d7n5ay0byam"
+path="res://.godot/imported/GrasslandTileset_16x16.png-762826eda2bc8fdfb94398f19c2e5df3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Componentes/Texturas/All_Fire_Bullet_Pixel_16x16.png"
-dest_files=["res://.godot/imported/All_Fire_Bullet_Pixel_16x16.png-f6d38a6af8be6006fbcce61a14590c4a.ctex"]
+source_file="res://Componentes/Texturas/TileMap/GrasslandTileset_16x16.png"
+dest_files=["res://.godot/imported/GrasslandTileset_16x16.png-762826eda2bc8fdfb94398f19c2e5df3.ctex"]
 
 [params]
 

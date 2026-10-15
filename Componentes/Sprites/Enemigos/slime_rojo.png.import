@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs7yjyjpllsxp"
-path="res://.godot/imported/slime_amarillo.png-9990936cf95e37034fc98355754f91bf.ctex"
+uid="uid://0cqqerngmj6y"
+path="res://.godot/imported/slime_rojo.png-b53c63b6f374b51e17d199cb0e2721cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Componentes/Sprites/slime_amarillo.png"
-dest_files=["res://.godot/imported/slime_amarillo.png-9990936cf95e37034fc98355754f91bf.ctex"]
+source_file="res://Componentes/Sprites/Enemigos/slime_rojo.png"
+dest_files=["res://.godot/imported/slime_rojo.png-b53c63b6f374b51e17d199cb0e2721cb.ctex"]
 
 [params]
 

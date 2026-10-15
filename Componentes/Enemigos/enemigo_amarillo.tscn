@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://u4458e5ur07"]
 
-[ext_resource type="Texture2D" uid="uid://cs7yjyjpllsxp" path="res://Componentes/Sprites/slime_amarillo.png" id="1_hicqc"]
-[ext_resource type="Script" uid="uid://c83fhfj2a17q4" path="res://Escenas/enemigo_amarillo.gd" id="1_rgrsn"]
+[ext_resource type="Texture2D" uid="uid://cs7yjyjpllsxp" path="res://Componentes/Sprites/Enemigos/slime_amarillo.png" id="1_hicqc"]
+[ext_resource type="Script" uid="uid://c83fhfj2a17q4" path="res://Componentes/Enemigos/enemigo_amarillo.gd" id="1_rgrsn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rgrsn"]
 animations = [{

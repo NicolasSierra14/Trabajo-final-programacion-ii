@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dc5jesmp2jinu"]
 
-[ext_resource type="Script" uid="uid://dsg55xfu2m2br" path="res://Escenas/enemigo_rojo.gd" id="1_qimeh"]
-[ext_resource type="PackedScene" uid="uid://dp11swmu6vra5" path="res://Escenas/disapro_enemigo_rojo.tscn" id="2_dn8hr"]
-[ext_resource type="Texture2D" uid="uid://0cqqerngmj6y" path="res://Componentes/Sprites/slime_rojo.png" id="4_0hxqg"]
+[ext_resource type="Script" uid="uid://dsg55xfu2m2br" path="res://Componentes/Enemigos/enemigo_rojo.gd" id="1_qimeh"]
+[ext_resource type="PackedScene" uid="uid://dp11swmu6vra5" path="res://Componentes/Pocion y disparos/disapro_enemigo_rojo.tscn" id="2_dn8hr"]
+[ext_resource type="Texture2D" uid="uid://0cqqerngmj6y" path="res://Componentes/Sprites/Enemigos/slime_rojo.png" id="4_0hxqg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvi5i"]
 animations = [{
