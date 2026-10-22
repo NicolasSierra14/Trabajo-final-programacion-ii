@@ -14,10 +14,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8vih"]
-size = Vector2(12.146008, 20.704853)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0iptp"]
+radius = 5.254881
+height = 19.697933
 
 [node name="Player" type="CharacterBody2D" unique_id=1296100437 node_paths=PackedStringArray("cooldown_player")]
+z_index = 2
 scale = Vector2(15.89, 15.89)
 collision_layer = 8
 collision_mask = 5
@@ -34,7 +36,7 @@ sprite_frames = SubResource("SpriteFrames_qgqwx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2144514555]
 position = Vector2(0.031466015, 1.5418509)
 scale = Vector2(0.9999994, 0.9999994)
-shape = SubResource("RectangleShape2D_i8vih")
+shape = SubResource("CapsuleShape2D_0iptp")
 
 [node name="Cooldown_player" type="Timer" parent="." unique_id=1863495662]
 one_shot = true

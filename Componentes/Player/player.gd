@@ -15,6 +15,8 @@ class_name Player
 ## Booleano que bloquea o autoriza el lanzamiento de una nueva poción según el cooldown_player.
 var puede_lanzar : bool = true
 
+var puede_mezclar : bool = true
+
 ## Carga una instancia de pocion.
 var escena_pocion = preload("res://Componentes/Pocion y disparos/pocion.tscn")
 
@@ -30,7 +32,8 @@ func _physics_process(delta):
 		velocity.y = -400.0 # Impulso inicial hacia arriba
 	super._physics_process(delta)
 	
-	gestionar_colores()
+	if puede_mezclar:
+		gestionar_colores()
 	
 	if Input.is_action_just_pressed("Lanzar"):
 		lanzar_pocion()

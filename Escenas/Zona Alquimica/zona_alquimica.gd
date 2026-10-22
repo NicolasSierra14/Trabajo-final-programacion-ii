@@ -1,12 +1,13 @@
 extends Area2D
 class_name ZonaAlquimica
 
-@export var label_combinacion : Label
+@export var label_combinacion : RichTextLabel
 
 var secuencia_objetivo : Array[int] = []
 var secuencia_ingresada : Array[int] = []
 var jugador_adentro : bool = false
 var completada : bool = false
+var jugador : Player
 
 func _ready():
 	if not body_entered.is_connected(_on_body_entered):
@@ -31,24 +32,31 @@ func actualizar_interfaz():
 	
 	var texto_restante : String = ""
 	var desde_indice = secuencia_ingresada.size()
+
+	
 	
 	# Recorre desde el dígito que toca presionar hasta el final
 	for i in range(desde_indice, secuencia_objetivo.size()):
-		texto_restante += str(secuencia_objetivo[i]) + " "
+		match secuencia_objetivo[i]:
+			1:
+				texto_restante += "[img=20]res://Componentes/Sprites/Pociones/tile_7_0.png[/img] "
+			2:
+				texto_restante += "[img=20]res://Componentes/Sprites/Pociones/tile_7_0.png[/img] "
+		
 	
 	label_combinacion.text = texto_restante
-
 
 func _on_body_entered(body):
 	print("Objeto entró al área: ", body.name)
 	# Verificamos si entra el jugador y la zona no fue completada
 	if body is Player and not completada:
+		jugador = body
 		jugador_adentro = true
 		secuencia_ingresada.clear()
 		actualizar_interfaz()
 		if label_combinacion:
 			label_combinacion.visible = true
-
+		body.puede_mezclar = false
 
 func _on_body_exited(body):# Si sale el jugador y la zona aún no se completó, se oculta y resetea
 	if (body is Player or body.is_in_group("Player")) and not completada:
@@ -56,8 +64,9 @@ func _on_body_exited(body):# Si sale el jugador y la zona aún no se completó, 
 		secuencia_ingresada.clear()
 		if label_combinacion:
 			label_combinacion.visible = false
+		body.puede_mezclar = true
 
-func _unhandled_input(event):
+func _input(event):
 	if not jugador_adentro or completada:
 		return
 	
@@ -93,6 +102,7 @@ func procesar_tecla(tecla: int):
 
 func completar_zona():
 	completada = true
+	jugador.puede_mezclar = true
 	print("¡Zona completada!")
 	
 	if label_combinacion:

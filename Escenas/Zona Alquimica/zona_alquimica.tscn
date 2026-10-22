@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpw5rx5sra76p"]
 
 [ext_resource type="Script" uid="uid://buh717gwsyaa3" path="res://Escenas/Zona Alquimica/zona_alquimica.gd" id="1_1jgua"]
-[ext_resource type="Texture2D" uid="uid://8ribcobhjgqy" path="res://Componentes/Sprites/Pociones/tile_8_9.png" id="2_88lcd"]
+[ext_resource type="Texture2D" uid="uid://plw7d1fjp20k" path="res://Componentes/Sprites/Zona Alquimia/Zona Pociones.png" id="2_88lcd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sl11k"]
 animations = [{
@@ -15,26 +15,30 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jgua"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_88lcd"]
+radius = 11.15
 
 [node name="ZonaAlquimica" type="Area2D" unique_id=189603104 node_paths=PackedStringArray("label_combinacion")]
+z_index = 1
+collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_1jgua")
 label_combinacion = NodePath("Label_Zona")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1300884655]
+light_mask = 17
+scale = Vector2(0.08, 0.08)
 sprite_frames = SubResource("SpriteFrames_sl11k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=204354827]
 shape = SubResource("CircleShape2D_1jgua")
 debug_color = Color(0.19930133, 0.54856175, 0, 0.41960785)
 
-[node name="Label_Zona" type="Label" parent="." unique_id=1946253133]
+[node name="Label_Zona" type="RichTextLabel" parent="." unique_id=837027761]
 z_index = 20
 offset_left = -20.0
 offset_top = -31.0
-offset_right = 20.0
-offset_bottom = -8.0
-text = "a"
-label_settings = SubResource("LabelSettings_88lcd")
+offset_right = 231.0
+offset_bottom = 62.0
+bbcode_enabled = true
+text = "[color=red]O[/color]"
+fit_content = true
