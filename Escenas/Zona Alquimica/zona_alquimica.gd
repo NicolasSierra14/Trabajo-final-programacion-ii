@@ -21,21 +21,23 @@ func _ready():
 
 func generar_combinacion_azar():
 	secuencia_objetivo.clear()
-	# Genera 5 números al azar entre 1 y 3
 	for i in range(5):
 		var num_random = randi_range(1, 3)
 		secuencia_objetivo.append(num_random)
-	
-	actualizar_interfaz()
 
 func actualizar_interfaz():
-	if label_combinacion:
-		# Convertimos los números explícitamente a texto
-		var texto : String = ""
-		for n in secuencia_objetivo:
-			texto += str(n) + " "
-		label_combinacion.text = texto
-		print("Texto asignado al Label: ", label_combinacion.text)
+	if not label_combinacion:
+		return
+	
+	var texto_restante : String = ""
+	var desde_indice = secuencia_ingresada.size()
+	
+	# Recorre desde el dígito que toca presionar hasta el final
+	for i in range(desde_indice, secuencia_objetivo.size()):
+		texto_restante += str(secuencia_objetivo[i]) + " "
+	
+	label_combinacion.text = texto_restante
+
 
 func _on_body_entered(body):
 	print("Objeto entró al área: ", body.name)
@@ -76,16 +78,16 @@ func procesar_tecla(tecla: int):
 	secuencia_ingresada.append(tecla)
 	var indice_actual = secuencia_ingresada.size() - 1
 	
-	# Si falla la combinación, se reinicia la entrada
+	# Si falla la tecla, se reinicia la entrada y reaparece el código completo
 	if secuencia_ingresada[indice_actual] != secuencia_objetivo[indice_actual]:
 		secuencia_ingresada.clear()
 		actualizar_interfaz()
 		return
 	
-	# Mostrar progreso visual
-	if label_combinacion:
-		label_combinacion.text = "OK: " + str(secuencia_ingresada.size()) + " / 5"
+	# Tecla correcta: borra el número acertado mostrando solo los restantes
+	actualizar_interfaz()
 	
+	# Si se ingresaron los 5 números
 	if secuencia_ingresada.size() == secuencia_objetivo.size():
 		completar_zona()
 
