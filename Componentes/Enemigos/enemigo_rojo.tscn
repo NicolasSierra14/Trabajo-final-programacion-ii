@@ -28,6 +28,7 @@ cambio_de_lado_enemigo_rojo = NodePath("Cambio_de_lado_enemigo_rojo")
 escena_bala_enemigo_rojo = ExtResource("2_dn8hr")
 area_vision_enemigo_rojo = NodePath("Area_de_vision")
 timepo_de_disparo = NodePath("Tiempo_de_disparo")
+movement_type = "horizontal"
 vida = 100
 speed = 40.0
 gravity = 2500.0

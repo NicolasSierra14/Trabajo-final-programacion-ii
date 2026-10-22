@@ -20,6 +20,9 @@ size = Vector2(21.5, 14)
 [node name="enemigo_azul" type="CharacterBody2D" unique_id=1317687869 node_paths=PackedStringArray("cambio_de_lado_enemigo_azul")]
 script = ExtResource("1_3l7qi")
 cambio_de_lado_enemigo_azul = NodePath("Cambio_de_lado_azul")
+color_enemigo = null
+movement_type = "horizontal"
+dispara = null
 vida = 100
 speed = 40.0
 gravity = 250.0
