@@ -12,6 +12,9 @@ class_name Player
 ## Referencia al nodo Timer asignado para gestionar el tiempo de recarga entre lanzamientos de pociones.
 @export var cooldown_player : Timer 
 
+## Daño recibido al estar en contacto con un Enemigo.
+@onready var danio_por_contacto : int = 10
+
 ## Booleano que bloquea o autoriza el lanzamiento de una nueva poción según el cooldown_player.
 var puede_lanzar : bool = true
 
@@ -35,11 +38,25 @@ func _physics_process(delta):
 	if puede_mezclar:
 		gestionar_colores()
 	
+	for i in get_slide_collision_count():
+		var colision = get_slide_collision(i)
+		var cuerpo = colision.get_collider()
+		
+		if cuerpo is Enemigo:
+			recibir_danio_por_enemigo()
+			break
+	
 	if Input.is_action_just_pressed("Lanzar"):
 		lanzar_pocion()
 	super._physics_process(delta)
 	if vida < 0:
 		Muerte()
+
+## Le resta vida al Player cuando detecta colision con la clase Enemigo.
+func recibir_danio_por_enemigo():
+	# Evita que baje vida en cada fotograma continuo si se queda pegado (puedes ajustar esto con un Timer si prefieres)
+	vida -= danio_por_contacto
+	print("El jugador tocó a un enemigo. Vida restante: ", vida)
 
 ## Detecta las pulsaciones de las teclas asignadas a los colores base ("Rojo", "Azul", "Amarillo").
 ## Al presionar cualquiera de los tres botones, llama a seleccionar_o_combinar() pasando el color respectivo y luego invoca crear_instancia_pocion(color_actual) para actualizar la poción que sostiene el personaje.
