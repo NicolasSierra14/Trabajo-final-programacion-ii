@@ -55,3 +55,6 @@ func _on_area_de_vision_body_entered(body):
 ## Señal cíclica emitida por el temporizador de recarga de disparo.
 func _on_tiempo_de_disparo_timeout():
 	crear_bala(direccion)
+
+func _on_area_de_vision_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+	timepo_de_disparo.stop()

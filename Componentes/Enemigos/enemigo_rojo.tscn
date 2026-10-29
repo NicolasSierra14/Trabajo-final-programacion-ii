@@ -61,4 +61,5 @@ wait_time = 2.0
 
 [connection signal="timeout" from="Cambio_de_lado_enemigo_rojo" to="." method="_on_cambio_de_lado_enemigo_rojo_timeout"]
 [connection signal="body_entered" from="Area_de_vision" to="." method="_on_area_de_vision_body_entered"]
+[connection signal="body_shape_exited" from="Area_de_vision" to="." method="_on_area_de_vision_body_shape_exited"]
 [connection signal="timeout" from="Tiempo_de_disparo" to="." method="_on_tiempo_de_disparo_timeout"]
