@@ -17,7 +17,7 @@ var direccion : Vector2
 ## Ejecuta el movimiento físico general del cuerpo y la gravedad de los cuerpos. 
 func process_move(delta):
 	if not is_on_floor():
-		velocity.y += gravity * get_physics_process_delta_time()
+		velocity.y += gravity * delta
 	else:
 		if velocity.y > 0:
 			velocity.y = 0.0

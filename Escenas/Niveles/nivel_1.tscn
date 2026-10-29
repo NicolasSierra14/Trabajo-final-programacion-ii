@@ -305,8 +305,6 @@ texture = ExtResource("10_siq8c")
 [node name="Player" parent="." unique_id=1296100437 instance=ExtResource("1_aa4oa")]
 position = Vector2(-396, 478)
 scale = Vector2(1, 1)
-speed = 50.0
-gravity = 1000.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=858219854]
 position = Vector2(92, -10)
