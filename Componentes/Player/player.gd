@@ -15,9 +15,18 @@ class_name Player
 ## Daño recibido al estar en contacto con un Enemigo.
 @onready var danio_por_contacto : int = 10
 
+@export var impulso_salto : float = 900.0
+
+## Boleano que detecta si el jugador puede recibir daño de los enemigos.
+var puede_recibir_danio : bool = true
+
+## Tiempo que espera para volver a ahcerle daño al jugador.
+var tiempo_cooldown_danio : float = 1.0
+
 ## Booleano que bloquea o autoriza el lanzamiento de una nueva poción según el cooldown_player.
 var puede_lanzar : bool = true
 
+##
 var puede_mezclar : bool = true
 
 ## Carga una instancia de pocion.
@@ -32,7 +41,7 @@ func _physics_process(delta):
 	direccion = Vector2(direccion_x, 0)
 	
 	if is_on_floor() and Input.is_action_just_pressed("Saltar"):
-		velocity.y = -400.0 # Impulso inicial hacia arriba
+		velocity.y = -impulso_salto # Impulso inicial hacia arriba
 	super._physics_process(delta)
 	
 	if puede_mezclar:
@@ -42,21 +51,25 @@ func _physics_process(delta):
 		var colision = get_slide_collision(i)
 		var cuerpo = colision.get_collider()
 		
-		if cuerpo is Enemigo:
+		if cuerpo is Enemigo and puede_recibir_danio:
 			recibir_danio_por_enemigo()
 			break
 	
 	if Input.is_action_just_pressed("Lanzar"):
 		lanzar_pocion()
 	super._physics_process(delta)
-	if vida < 0:
+	if vida <= 0:
 		Muerte()
 
 ## Le resta vida al Player cuando detecta colision con la clase Enemigo.
 func recibir_danio_por_enemigo():
-	# Evita que baje vida en cada fotograma continuo si se queda pegado (puedes ajustar esto con un Timer si prefieres)
+	puede_recibir_danio = false
 	vida -= danio_por_contacto
-	print("El jugador tocó a un enemigo. Vida restante: ", vida)
+	print("¡El jugador recibió daño! Vida restante: ", vida)
+	
+	# Espera el tiempo configurado antes de permitir volver a recibir daño
+	await get_tree().create_timer(tiempo_cooldown_danio).timeout
+	puede_recibir_danio = true
 
 ## Detecta las pulsaciones de las teclas asignadas a los colores base ("Rojo", "Azul", "Amarillo").
 ## Al presionar cualquiera de los tres botones, llama a seleccionar_o_combinar() pasando el color respectivo y luego invoca crear_instancia_pocion(color_actual) para actualizar la poción que sostiene el personaje.
