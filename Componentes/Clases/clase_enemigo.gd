@@ -32,6 +32,8 @@ func daño_recibido_enemigo(cantidad:int):
 ## Selector expuesto en el Inspector de Godot que define el modo de desplazamiento.
 @export_enum("vertical","parabolico","horizontal") var movement_type : String = "vertical"
 
+
+var tiempo_movimiento : float
 ## Bucle de físicas principal que evalúa y ejecuta el tipo de movimiento seleccionado en movement_type.
 func _physics_process(delta):
 	match movement_type:
@@ -46,19 +48,25 @@ func _physics_process(delta):
 			velocity.y += gravity * delta
 			move_and_slide()
 		"parabolico":
+			
+			tiempo_movimiento += delta
+			if tiempo_movimiento >= 5:
+				tiempo_movimiento = 0
+				moving = true
+
 			if moving:
 				velocity.x = (speed/tiempo) * direccion.x
 				contador += delta
-			if contador <= tiempo / 2.0:
-				velocity.y = (velocidad_vertical/(tiempo*tiempo)) * abs(contador - (tiempo/2))
-			else:
-				velocity.y = -(velocidad_vertical/(tiempo*tiempo)) * abs(contador - (tiempo/2))
-			if contador >= tiempo:
-				contador = 0.0
-				direccion.x *= -1
-				$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
-				moving = false
-				position.y = clamp(position.y,max_height,INF)
+				if contador <= tiempo / 2.0:
+					velocity.y = (velocidad_vertical/(tiempo*tiempo)) * abs(contador - (tiempo/2))
+				else:
+					velocity.y = -(velocidad_vertical/(tiempo*tiempo)) * abs(contador - (tiempo/2))
+				if contador >= tiempo:
+					contador = 0.0
+					direccion.x *= -1
+					$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
+					moving = false
+					position.y = clamp(position.y,max_height,INF)
 			else:
 				velocity = Vector2.ZERO
-				move_and_slide()
+			move_and_slide()
