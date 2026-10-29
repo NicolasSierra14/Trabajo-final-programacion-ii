@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cbrt7ybhbhlpt"]
+
+[ext_resource type="Texture2D" uid="uid://ccpx3hngcgnsd" path="res://Componentes/Sprites/Puerta Final/GrassLand_Entry_1.png" id="1_5wtds"]
+[ext_resource type="Script" uid="uid://bx5wmhrnojv7y" path="res://Componentes/Puerta Final/puerta_final_nivel.gd" id="1_y5lw5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h38i7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5wtds")
+}],
+"loop": true,
+"name": &"puerta1",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h38i7"]
+size = Vector2(13, 22)
+
+[node name="Puerta_final_nivel" type="Area2D" unique_id=1827256270]
+z_index = 2
+collision_layer = 0
+collision_mask = 9
+script = ExtResource("1_y5lw5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2140426080]
+sprite_frames = SubResource("SpriteFrames_h38i7")
+animation = &"puerta1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=167721221]
+position = Vector2(0.5, 5)
+shape = SubResource("RectangleShape2D_h38i7")
+debug_color = Color(0.6865354, 0.5005208, 1.92523e-07, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
