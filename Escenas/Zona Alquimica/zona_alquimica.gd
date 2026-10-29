@@ -20,6 +20,7 @@ var completada : bool = false
 ## Referencia al nodo del jugador (Player) cuando entra al área, utilizada para modificar sus permisos de mezcla.
 var jugador : Player
 
+
 ## Configura los estados iniciales de la zona al entrar en ejecución.
 func _ready():
 	if not body_entered.is_connected(_on_body_entered):
@@ -118,6 +119,7 @@ func procesar_tecla(tecla: int):
 	# Si se ingresaron los 5 números
 	if secuencia_ingresada.size() == secuencia_objetivo.size():
 		completar_zona()
+		VariablesGlobales.cantidad_zona_alquimica_necesarias += 1
 
 ## Finaliza con éxito la zona alquímica.
 func completar_zona():
