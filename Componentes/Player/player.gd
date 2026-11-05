@@ -13,9 +13,12 @@ class_name Player
 @export var cooldown_player : Timer 
 
 ## Daño recibido al estar en contacto con un Enemigo.
-@onready var danio_por_contacto : int = 10
+@onready var danio_por_contacto : int = 20
 
+## Variable que determina la fuerza de salto que ejerce el Player hacia arriba.
 @export var impulso_salto : float = 900.0
+
+@export var hud : Control 
 
 ## Boleano que detecta si el jugador puede recibir daño de los enemigos.
 var puede_recibir_danio : bool = true
@@ -26,7 +29,7 @@ var tiempo_cooldown_danio : float = 1.0
 ## Booleano que bloquea o autoriza el lanzamiento de una nueva poción según el cooldown_player.
 var puede_lanzar : bool = true
 
-##
+## Booleano que determina si el Player puede mezclar durante la partida.
 var puede_mezclar : bool = true
 
 ## Carga una instancia de pocion.
@@ -54,6 +57,10 @@ func _physics_process(delta):
 		if cuerpo is Enemigo and puede_recibir_danio:
 			recibir_danio_por_enemigo()
 			break
+	
+	hud.barra_vida.value = vida
+	
+	
 	
 	if Input.is_action_just_pressed("Lanzar"):
 		lanzar_pocion()

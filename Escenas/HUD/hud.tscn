@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://uddflg0lkxgn"]
+
+[ext_resource type="Script" uid="uid://cfqeagffhtbvi" path="res://Escenas/HUD/hud.gd" id="1_0hk87"]
+[ext_resource type="Texture2D" uid="uid://cwrrcpat3kjux" path="res://Escenas/HUD/HUD CIENTIFICO CARA.png" id="1_oqv1q"]
+[ext_resource type="Texture2D" uid="uid://de4eweb15vtlb" path="res://Escenas/HUD/Grupo de pociones.png" id="2_mipa4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqv1q"]
+bg_color = Color(0.13333334, 0.1254902, 0.20392157, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.13333334, 0.1254902, 0.20392157, 1)
+corner_radius_top_right = 8
+corner_radius_bottom_right = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mipa4"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.13333334, 0.1254902, 0.20392157, 1)
+corner_radius_top_right = 8
+corner_radius_bottom_right = 7
+
+[node name="HUD" type="Control" unique_id=1701087861 node_paths=PackedStringArray("barra_vida")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0hk87")
+barra_vida = NodePath("PanelContainer/HBoxContainer/Zona_Vida/Vida/barra_de_vida")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1752167528]
+z_index = 100
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=581441866]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Zona_Cabeza" type="MarginContainer" parent="PanelContainer/HBoxContainer" unique_id=2049765586]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Zona_Cabeza" unique_id=1628787566]
+layout_mode = 2
+
+[node name="Cabeza" type="MarginContainer" parent="PanelContainer/HBoxContainer/Zona_Cabeza/VBoxContainer" unique_id=1626540402]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/Zona_Cabeza/VBoxContainer/Cabeza" unique_id=1751527627]
+z_index = 101
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("1_oqv1q")
+expand_mode = 1
+
+[node name="Zona_Vida" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=598635831]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="Vida" type="HBoxContainer" parent="PanelContainer/HBoxContainer/Zona_Vida" unique_id=1426049362]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = -5
+
+[node name="barra_de_vida" type="ProgressBar" parent="PanelContainer/HBoxContainer/Zona_Vida/Vida" unique_id=284795884]
+custom_minimum_size = Vector2(310, 32)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_oqv1q")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mipa4")
+value = 50.0
+show_percentage = false
+
+[node name="Zona_Pociones" type="HBoxContainer" parent="PanelContainer/HBoxContainer/Zona_Vida" unique_id=786884874]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/Zona_Vida/Zona_Pociones" unique_id=765270858]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="barra_pociones" type="TextureRect" parent="PanelContainer/HBoxContainer/Zona_Vida/Zona_Pociones/MarginContainer" unique_id=1582887692]
+custom_minimum_size = Vector2(300.395, 0)
+layout_mode = 2
+texture = ExtResource("2_mipa4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Zona_Libro" type="MarginContainer" parent="PanelContainer/HBoxContainer" unique_id=1418827417]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Zona_Libro" unique_id=743415689]
+layout_mode = 2
