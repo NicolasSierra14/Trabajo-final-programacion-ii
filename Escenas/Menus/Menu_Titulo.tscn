@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://cp3j4065jsft4"]
+
+[ext_resource type="Script" uid="uid://c0c8udb85xx5l" path="res://Escenas/Menus/menu_titulo.gd" id="1_i8bba"]
+[ext_resource type="PackedScene" uid="uid://boy0d0nwt572g" path="res://Escenas/Niveles/nivel_1.tscn" id="2_t6g65"]
+[ext_resource type="Texture2D" uid="uid://dsqbjiek8p8w1" path="res://Escenas/Menus/Menu Pociones.png" id="3_es8gg"]
+
+[node name="Menu" type="Control" unique_id=1699603636 node_paths=PackedStringArray("opcciones_menu")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i8bba")
+escena_juego = ExtResource("2_t6g65")
+opcciones_menu = NodePath("PanelContainer")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=605834206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_es8gg")
+stretch_mode = 6
+
+[node name="VBoxContainer_ Titulo" type="VBoxContainer" parent="." unique_id=1379170222]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -451.0
+offset_top = -198.0
+offset_right = 451.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 80
+
+[node name="Label" type="Label" parent="VBoxContainer_ Titulo" unique_id=941340954]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "ALQUIMIX"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2_Botones" type="VBoxContainer" parent="VBoxContainer_ Titulo" unique_id=1124864301]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Comenzar Juego" type="Button" parent="VBoxContainer_ Titulo/VBoxContainer2_Botones" unique_id=1766835888]
+layout_mode = 2
+text = "Comenzar juego
+"
+
+[node name="Cargar_Juego" type="Button" parent="VBoxContainer_ Titulo/VBoxContainer2_Botones" unique_id=2096771641]
+visible = false
+layout_mode = 2
+text = "Cargar Juego
+"
+
+[node name="Opcion" type="Button" parent="VBoxContainer_ Titulo/VBoxContainer2_Botones" unique_id=1872139262]
+layout_mode = 2
+text = "Opciones"
+
+[node name="SAlir" type="Button" parent="VBoxContainer_ Titulo/VBoxContainer2_Botones" unique_id=1456735464]
+layout_mode = 2
+text = "Salir"
+
+[node name="Texto_Copyrigth" type="Label" parent="." unique_id=1570283907]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -113.5
+offset_top = -49.0
+offset_right = 113.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "2026 Nicolas Sierra Copyrigth
+"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1282915407]
+visible = false
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -110.0
+offset_right = 256.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=2036116773]
+layout_mode = 2
+
+[node name="Barra_Superior" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2023791545]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Barra_Superior" unique_id=1114816692]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Opcciones"
+horizontal_alignment = 1
+
+[node name="Boton_Cierra_Opcciones" type="Button" parent="PanelContainer/VBoxContainer/Barra_Superior" unique_id=1575478034]
+layout_mode = 2
+text = "X"
+
+[node name="TabContainer" type="TabContainer" parent="PanelContainer/VBoxContainer" unique_id=2014619730]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Audio" type="VBoxContainer" parent="PanelContainer/VBoxContainer/TabContainer" unique_id=15590618]
+layout_mode = 2
+theme_override_constants/separation = 10
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/TabContainer/Audio" unique_id=858919034]
+layout_mode = 2
+text = "Opcion 1"
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/TabContainer/Audio" unique_id=1754988857]
+layout_mode = 2
+text = "Opcion 2"
+
+[node name="Video" type="VBoxContainer" parent="PanelContainer/VBoxContainer/TabContainer" unique_id=878425010]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/TabContainer/Video" unique_id=380298740]
+layout_mode = 2
+text = "Opcion 1"
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/TabContainer/Video" unique_id=1499499923]
+layout_mode = 2
+text = "Opcion 2"
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/TabContainer/Video" unique_id=833837786]
+layout_mode = 2
+text = "Opcion 3"
+
+[connection signal="pressed" from="VBoxContainer_ Titulo/VBoxContainer2_Botones/Comenzar Juego" to="." method="_on_comenzar_juego_pressed"]
+[connection signal="pressed" from="VBoxContainer_ Titulo/VBoxContainer2_Botones/Cargar_Juego" to="." method="_on_cargar_juego_pressed"]
+[connection signal="pressed" from="VBoxContainer_ Titulo/VBoxContainer2_Botones/Opcion" to="." method="_on_opccion_pressed"]
+[connection signal="pressed" from="VBoxContainer_ Titulo/VBoxContainer2_Botones/SAlir" to="." method="_on_s_alir_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Barra_Superior/Boton_Cierra_Opcciones" to="." method="_on_boton_cierra_opcciones_pressed"]
