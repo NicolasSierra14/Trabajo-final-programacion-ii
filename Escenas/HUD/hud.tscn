@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://de4eweb15vtlb" path="res://Escenas/HUD/Grupo de pociones.png" id="2_mipa4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqv1q"]
-bg_color = Color(0.13333334, 0.1254902, 0.20392157, 1)
+bg_color = Color(0, 0, 0, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -15,7 +15,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 7
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mipa4"]
-bg_color = Color(0.6745098, 0.19607843, 0.19607843, 1)
+bg_color = Color(1, 0.19607843, 0.19607843, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -35,6 +35,7 @@ script = ExtResource("1_0hk87")
 barra_vida = NodePath("PanelContainer/HBoxContainer/Zona_Vida/Vida/barra_de_vida")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1752167528]
+self_modulate = Color(1, 1, 1, 0)
 z_index = 100
 custom_minimum_size = Vector2(0, 256)
 layout_mode = 1

@@ -18,6 +18,7 @@ class_name Player
 ## Variable que determina la fuerza de salto que ejerce el Player hacia arriba.
 @export var impulso_salto : float = 900.0
 
+## Variable que determina el HUD del Player.
 @export var hud : Control 
 
 ## Boleano que detecta si el jugador puede recibir daño de los enemigos.
