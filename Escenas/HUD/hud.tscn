@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://uddflg0lkxgn"]
 
 [ext_resource type="Script" uid="uid://cfqeagffhtbvi" path="res://Escenas/HUD/hud.gd" id="1_0hk87"]
-[ext_resource type="Texture2D" uid="uid://cwrrcpat3kjux" path="res://Escenas/HUD/HUD CIENTIFICO CARA.png" id="1_oqv1q"]
-[ext_resource type="Texture2D" uid="uid://de4eweb15vtlb" path="res://Escenas/HUD/Grupo de pociones.png" id="2_mipa4"]
+[ext_resource type="Texture2D" uid="uid://cwrrcpat3kjux" path="res://Componentes/Sprites/HUD/HUD CIENTIFICO CARA.png" id="1_oqv1q"]
+[ext_resource type="Texture2D" uid="uid://dkbwp2iwe30ai" path="res://Componentes/Sprites/HUD/Madera HUD.png" id="2_3uxrs"]
+[ext_resource type="Texture2D" uid="uid://de4eweb15vtlb" path="res://Componentes/Sprites/HUD/Grupo de pociones.png" id="2_mipa4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqv1q"]
 bg_color = Color(0, 0, 0, 1)
@@ -37,14 +38,21 @@ barra_vida = NodePath("PanelContainer/HBoxContainer/Zona_Vida/Vida/barra_de_vida
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1752167528]
 self_modulate = Color(1, 1, 1, 0)
 z_index = 100
-custom_minimum_size = Vector2(0, 256)
+custom_minimum_size = Vector2(0, 170)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -150.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=513942331]
+layout_mode = 2
+texture = ExtResource("2_3uxrs")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=581441866]
 layout_mode = 2

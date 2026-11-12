@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de4eweb15vtlb"
-path="res://.godot/imported/Grupo de pociones.png-fad7687c82b8ded916c815ad6df57017.ctex"
+path="res://.godot/imported/Grupo de pociones.png-2ce5fcb39754716ee21c1482df47bc19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/HUD/Grupo de pociones.png"
-dest_files=["res://.godot/imported/Grupo de pociones.png-fad7687c82b8ded916c815ad6df57017.ctex"]
+source_file="res://Componentes/Sprites/HUD/Grupo de pociones.png"
+dest_files=["res://.godot/imported/Grupo de pociones.png-2ce5fcb39754716ee21c1482df47bc19.ctex"]
 
 [params]
 

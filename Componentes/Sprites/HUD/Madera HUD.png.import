@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwrrcpat3kjux"
-path="res://.godot/imported/HUD CIENTIFICO CARA.png-3d3fbaca025c522d9f08f5776f29585f.ctex"
+uid="uid://dkbwp2iwe30ai"
+path="res://.godot/imported/Madera HUD.png-7543f317568c00206fc621e3b02a4264.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/HUD/HUD CIENTIFICO CARA.png"
-dest_files=["res://.godot/imported/HUD CIENTIFICO CARA.png-3d3fbaca025c522d9f08f5776f29585f.ctex"]
+source_file="res://Componentes/Sprites/HUD/Madera HUD.png"
+dest_files=["res://.godot/imported/Madera HUD.png-7543f317568c00206fc621e3b02a4264.ctex"]
 
 [params]
 
