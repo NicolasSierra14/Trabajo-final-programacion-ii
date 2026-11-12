@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cp3j4065jsft4"]
 
 [ext_resource type="Script" uid="uid://c0c8udb85xx5l" path="res://Escenas/Menus/menu_titulo.gd" id="1_i8bba"]
-[ext_resource type="PackedScene" uid="uid://boy0d0nwt572g" path="res://Escenas/Niveles/nivel_1.tscn" id="2_t6g65"]
-[ext_resource type="Texture2D" uid="uid://dsqbjiek8p8w1" path="res://Escenas/Menus/Menu Pociones.png" id="3_es8gg"]
+[ext_resource type="PackedScene" uid="uid://boy0d0nwt572g" path="res://Escenas/Niveles/Nivel 1/nivel_1.tscn" id="2_t6g65"]
+[ext_resource type="Texture2D" uid="uid://dsqbjiek8p8w1" path="res://Componentes/Sprites/Sprite Menu/Menu Pociones.png" id="3_es8gg"]
 
 [node name="Menu" type="Control" unique_id=1699603636 node_paths=PackedStringArray("opcciones_menu")]
 layout_mode = 3

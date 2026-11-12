@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0qmfoqya3u8x"]
 
-[ext_resource type="Script" uid="uid://oicghnhjgp50" path="res://Escenas/Niveles/ganaste_nivel_1.gd" id="1_kvf3m"]
-[ext_resource type="Texture2D" uid="uid://dsqbjiek8p8w1" path="res://Escenas/Menus/Menu Pociones.png" id="2_k0m4x"]
+[ext_resource type="Script" uid="uid://oicghnhjgp50" path="res://Escenas/Niveles/Nivel 1/ganaste_nivel_1.gd" id="1_kvf3m"]
+[ext_resource type="Texture2D" uid="uid://dsqbjiek8p8w1" path="res://Componentes/Sprites/Sprite Menu/Menu Pociones.png" id="2_k0m4x"]
 
 [node name="Ganaste_Nivel_1" type="Control" unique_id=1846088308]
 layout_mode = 3

@@ -10,4 +10,4 @@ func _ready():
 func _on_body_entered(body):
 	if body is Player:
 		if VariablesGlobales.cantidad_zona_alquimica_necesarias >= 3:
-			get_tree().change_scene_to_file("res://Escenas/Niveles/Ganaste_Nivel_1.tscn")
+			get_tree().change_scene_to_file("res://Escenas/Niveles/Nivel 1/ganaste_Nivel_1.tscn")
