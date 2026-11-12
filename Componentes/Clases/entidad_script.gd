@@ -26,7 +26,7 @@ func process_move(delta):
 
 ## Gestiona la eliminación de la entidad del juego.
 func Muerte():
-	queue_free()
+		queue_free()
 
 func _physics_process(delta):
 	process_move(delta)

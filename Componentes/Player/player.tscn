@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cxie5gq16cprg" path="res://Componentes/Player/player.gd" id="1_cnkc8"]
 [ext_resource type="Texture2D" uid="uid://dcrqgyqv6472" path="res://Componentes/Sprites/Player/Cientifico sprite.png" id="2_i8vih"]
 [ext_resource type="PackedScene" uid="uid://uddflg0lkxgn" path="res://Escenas/HUD/hud.tscn" id="3_615n7"]
+[ext_resource type="PackedScene" uid="uid://d2piji68jrv8" path="res://Escenas/Muerte/pantalla_muerte.tscn" id="4_uy4wg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qgqwx"]
 animations = [{
@@ -19,7 +20,7 @@ animations = [{
 radius = 5.254881
 height = 19.697933
 
-[node name="Player" type="CharacterBody2D" unique_id=1296100437 node_paths=PackedStringArray("cooldown_player", "hud")]
+[node name="Player" type="CharacterBody2D" unique_id=1296100437 node_paths=PackedStringArray("cooldown_player", "hud", "pantalla_muerte_animacion")]
 z_index = 2
 scale = Vector2(15.89, 15.89)
 collision_layer = 8
@@ -27,7 +28,8 @@ collision_mask = 5
 script = ExtResource("1_cnkc8")
 cooldown_player = NodePath("Cooldown_player")
 impulso_salto = 75.0
-hud = NodePath("CanvasLayer/HUD")
+hud = NodePath("HUD/HUD")
+pantalla_muerte_animacion = NodePath("Pantalla_Muerte/Muerte_Animacion")
 vida = 100
 speed = 85.0
 gravity = 98.0
@@ -44,8 +46,12 @@ shape = SubResource("CapsuleShape2D_0iptp")
 [node name="Cooldown_player" type="Timer" parent="." unique_id=1863495662]
 one_shot = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=358338125]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=358338125]
 
-[node name="HUD" parent="CanvasLayer" unique_id=1701087861 instance=ExtResource("3_615n7")]
+[node name="HUD" parent="HUD" unique_id=1701087861 instance=ExtResource("3_615n7")]
+
+[node name="Pantalla_Muerte" parent="." unique_id=1461750244 instance=ExtResource("4_uy4wg")]
 
 [connection signal="timeout" from="Cooldown_player" to="." method="_on_cooldown_player_timeout"]
+
+[editable path="Pantalla_Muerte"]

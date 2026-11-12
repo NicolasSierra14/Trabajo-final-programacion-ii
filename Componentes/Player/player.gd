@@ -39,8 +39,15 @@ var escena_pocion = preload("res://Componentes/Pocion y disparos/pocion.tscn")
 ## Guarda la referencia del nodo de la poción que está creada actualmente como hija del jugador antes de ser disparada.
 var instancia : Pocion
 
+## Variable que se vincula con la animacion de muerte del Player.
+@export var pantalla_muerte_animacion : AnimationPlayer
+
+## Variable que detecta si el Player a muerto
+var muerto : bool = false
+
 ## Bucle de físicas principal del personaje
 func _physics_process(delta):
+	if muerto: return
 	var direccion_x = Input.get_axis("Izquierda", "Derecha")
 	direccion = Vector2(direccion_x, 0)
 	
@@ -68,6 +75,16 @@ func _physics_process(delta):
 	super._physics_process(delta)
 	if vida <= 0:
 		Muerte()
+
+
+## Funcion que es llamada cuando el Player muere y se inicia su animacion. 
+func Muerte():
+	if muerto: return
+	muerto = true
+	pantalla_muerte_animacion.play("Morir")
+	await get_tree().create_timer(5).timeout
+	get_tree().reload_current_scene()
+
 
 ## Le resta vida al Player cuando detecta colision con la clase Enemigo.
 func recibir_danio_por_enemigo():
