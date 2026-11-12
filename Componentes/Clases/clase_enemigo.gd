@@ -32,8 +32,9 @@ func daño_recibido_enemigo(cantidad:int):
 ## Selector expuesto en el Inspector de Godot que define el modo de desplazamiento.
 @export_enum("vertical","parabolico","horizontal") var movement_type : String = "vertical"
 
-
+## El tiempo que se toma el enemigo para cambiar de direccion al caminar.
 var tiempo_movimiento : float
+
 ## Bucle de físicas principal que evalúa y ejecuta el tipo de movimiento seleccionado en movement_type.
 func _physics_process(delta):
 	match movement_type:
