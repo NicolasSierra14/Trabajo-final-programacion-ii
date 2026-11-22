@@ -45,15 +45,22 @@ var instancia : Pocion
 ## Variable que detecta si el Player a muerto
 var muerto : bool = false
 
+## Variable que guarda la animacion del PLayer.
+@onready var animacion_player : AnimatedSprite2D = $AnimatedSprite2D 
+
 ## Bucle de físicas principal del personaje
 func _physics_process(delta):
 	if muerto: return
 	var direccion_x = Input.get_axis("Izquierda", "Derecha")
 	direccion = Vector2(direccion_x, 0)
 	
+	
 	if is_on_floor() and Input.is_action_just_pressed("Saltar"):
 		velocity.y = -impulso_salto # Impulso inicial hacia arriba
+		
+	
 	super._physics_process(delta)
+	actualizar_animacion(direccion_x)
 	
 	if puede_mezclar:
 		gestionar_colores()
@@ -170,3 +177,15 @@ func lanzar_pocion():
 ## Vuelve a colocar puede_lanzar = true, permitiendo disparar otra poción.
 func _on_cooldown_player_timeout():
 	puede_lanzar = true
+
+## Funcion que actualiza la animacion del Player.
+func actualizar_animacion(direccion_x: float) -> void:
+	if direccion_x != 0:
+		animacion_player.flip_h = direccion_x < 0
+
+	if not is_on_floor():
+		animacion_player.play("saltando")
+	elif direccion_x != 0:
+		animacion_player.play("caminando")
+	else:
+		animacion_player.play("quieto")
