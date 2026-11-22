@@ -43,6 +43,7 @@ func crear_bala (dir: Vector2):
 	get_parent().add_child(bala_enemigo_rojo)
 	bala_enemigo_rojo.position = position
 	bala_enemigo_rojo.direccion = direccion
+	animated_sprite.play("disparo")
 
 ## Señal recibida cuando un cuerpo entra en el Area2D de visión.
 func _on_area_de_vision_body_entered(body):
@@ -59,3 +60,4 @@ func _on_tiempo_de_disparo_timeout():
 ## Señal que detecta que si el Player salio del area de vision del enemigo, deja de disparar.
 func _on_area_de_vision_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
 	timepo_de_disparo.stop()
+	animated_sprite.play("quieto")

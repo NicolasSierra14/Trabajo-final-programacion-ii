@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0cqqerngmj6y"
-path="res://.godot/imported/slime_rojo.png-b53c63b6f374b51e17d199cb0e2721cb.ctex"
+uid="uid://bwf0dwc16vefi"
+path="res://.godot/imported/slime_rojo_disparo 1.png-7c8959ea839df8d9593774955fac1e0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Componentes/Sprites/Enemigos/slime_rojo.png"
-dest_files=["res://.godot/imported/slime_rojo.png-b53c63b6f374b51e17d199cb0e2721cb.ctex"]
+source_file="res://Componentes/Sprites/Enemigos/Slime Rojo/slime_rojo_disparo 1.png"
+dest_files=["res://.godot/imported/slime_rojo_disparo 1.png-7c8959ea839df8d9593774955fac1e0c.ctex"]
 
 [params]
 

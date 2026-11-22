@@ -2,16 +2,25 @@
 
 [ext_resource type="Script" uid="uid://dsg55xfu2m2br" path="res://Componentes/Enemigos/enemigo_rojo.gd" id="1_qimeh"]
 [ext_resource type="PackedScene" uid="uid://dp11swmu6vra5" path="res://Componentes/Pocion y disparos/disapro_enemigo_rojo.tscn" id="2_dn8hr"]
-[ext_resource type="Texture2D" uid="uid://0cqqerngmj6y" path="res://Componentes/Sprites/Enemigos/slime_rojo.png" id="4_0hxqg"]
+[ext_resource type="Texture2D" uid="uid://bwf0dwc16vefi" path="res://Componentes/Sprites/Enemigos/Slime Rojo/slime_rojo_disparo 1.png" id="3_lyk2e"]
+[ext_resource type="Texture2D" uid="uid://0cqqerngmj6y" path="res://Componentes/Sprites/Enemigos/Slime Rojo/slime_rojo.png" id="4_0hxqg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvi5i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_lyk2e")
+}],
+"loop": true,
+"name": &"disparo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_0hxqg")
 }],
 "loop": true,
-"name": &"default",
+"name": &"quieto",
 "speed": 5.0
 }]
 
@@ -38,6 +47,7 @@ metadata/_custom_type_script = "uid://bewcu4fhx8hpt"
 position = Vector2(-0.34246573, 0)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_kvi5i")
+animation = &"quieto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117615322]
 position = Vector2(8.1650185e-08, 1.7123287)
