@@ -18,13 +18,13 @@ var velocidad_horizontal : float = 300.0
 var velocidad_inicial_vertical : float = -150.0
 
 ## Cantidad de puntos de salud que restará al enemigo impactado si el color coincide.
-var daño_pocion : float = 100
+@export var daño_pocion : float = 100
 
 ## Conecta el AnimatedSprite2D con una variable para poder cambiar el sprit.
 @onready var sprite_pocion = $SpritePocion
 
 ## Referencia al nodo detector de colisiones.
-@export var area : Area2D
+@onready var area : Area2D = $Area2D
 
 ## Control que indica si la poción se encuentra actualmente en vuelo activo o si aún permanece sujeta en la mano del jugador.
 var lanzada : bool = false

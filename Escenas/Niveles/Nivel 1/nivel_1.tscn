@@ -289,7 +289,7 @@ sources/6 = SubResource("TileSetAtlasSource_nqjrd")
 position = Vector2(453, 554)
 
 [node name="Fondo" type="CanvasLayer" parent="." unique_id=2002393312]
-visible = false
+layer = -2
 
 [node name="TextureRect" type="TextureRect" parent="Fondo" unique_id=1116597769]
 anchors_preset = 15

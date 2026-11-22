@@ -1,9 +1,8 @@
 ## Puerta por donde el jugador debe pasar al completar el objetivo del nivel e ir al siguiente.
 extends Area2D
 
-## 
 func _ready():
-	if not body_entered.is_connected(_on_body_entered):
+	if not body_entered.is_connected(_on_body_entered): #Conecta al iniciar el juego la deteccion con el Player.
 		body_entered.connect(_on_body_entered)
 
 ## Detecta el momento en que un cuerpo entra en el área de la puerta.

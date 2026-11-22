@@ -11,11 +11,11 @@ class_name Enemigo
 ## Magnitud base de aceleración o fuerza vertical empleada durante el cálculo del arco parabólico.
 var velocidad_vertical : float = 150.0
 
-## Almacena la cota vertical inicial en el eje Y al crearse el enemigo, usada como límite superior para el clamp de retorno.
+## Almacena la cota vertical inicial en el eje y al crearse el enemigo, usada como límite superior para el clamp de retorno.
 @onready var max_height = position.y
 
 ## Duración total en segundos de una parábola.
-var tiempo : float = 0.5
+var tiempo_parabola : float = 0.5
 
 ## Booleano de control que determina si la fase activa de desplazamiento parabólico se está ejecutando o si debe frenarse.
 var moving = true
@@ -56,13 +56,13 @@ func _physics_process(delta):
 				moving = true
 
 			if moving:
-				velocity.x = (speed/tiempo) * direccion.x
+				velocity.x = (speed/tiempo_parabola) * direccion.x
 				contador += delta
-				if contador <= tiempo / 2.0:
-					velocity.y = (velocidad_vertical/(tiempo*tiempo)) * abs(contador - (tiempo/2))
+				if contador <= tiempo_parabola / 2.0:
+					velocity.y = (velocidad_vertical/(tiempo_parabola*tiempo_parabola)) * abs(contador - (tiempo_parabola/2))
 				else:
-					velocity.y = -(velocidad_vertical/(tiempo*tiempo)) * abs(contador - (tiempo/2))
-				if contador >= tiempo:
+					velocity.y = -(velocidad_vertical/(tiempo_parabola*tiempo_parabola)) * abs(contador - (tiempo_parabola/2))
+				if contador >= tiempo_parabola:
 					contador = 0.0
 					direccion.x *= -1
 					$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h

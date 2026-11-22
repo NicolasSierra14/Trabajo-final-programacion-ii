@@ -4,10 +4,10 @@ class_name Player
 ## Controla el comportamiento del personaje principal. Administra la lectura de entradas del teclado para desplazarse y saltar, el inventario básico de colores (primarios, secundarios y combinaciones), la creación visual/instanciación de la poción activa en la mano del personaje, y el disparo hacia el escenario con control de enfriamiento (cooldown). Además, verifica su ciclo de vida ejecutando la muerte si los puntos de salud se agotan.
 
 ## Almacena el color primario seleccionado o el resultado de una mezcla secundaria.
-@export var color_actual : String = ""
+var color_actual : String = ""
 
 ## Guarda temporalmente el segundo color ingresado por el jugador para ser mezclado con el actual.
-@export var color_secundario : String = ""
+var color_secundario : String = ""
 
 ## Referencia al nodo Timer asignado para gestionar el tiempo de recarga entre lanzamientos de pociones.
 @export var cooldown_player : Timer 
@@ -58,7 +58,7 @@ func _physics_process(delta):
 	if puede_mezclar:
 		gestionar_colores()
 	
-	for i in get_slide_collision_count():
+	for i in get_slide_collision_count(): #Detecta cada vez que cuerpo colisiona para llamar a la accion de daño.
 		var colision = get_slide_collision(i)
 		var cuerpo = colision.get_collider()
 		
@@ -73,6 +73,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Lanzar"):
 		lanzar_pocion()
 	super._physics_process(delta)
+	
 	if vida <= 0:
 		Muerte()
 
@@ -131,7 +132,7 @@ func seleccionar_o_combinar(nuevo_color: String):
 		combinar_colores()
 
 ## Fusiona los dos colores primarios en un color secundario resultante.
-## Inserta ambos colores en un arreglo y aplica .sort() para ordenar alfabéticamente los textos (haciendo que el orden de entrada no afecte). Transforma las parejas en "Violeta" (Azul + Rojo), "Naranja" (Amarillo + Rojo) o "Verde" (Amarillo + Azul), vacía color_secundario e imprime la confirmación.
+## Inserta ambos colores en un Array y aplica .sort() para ordenar alfabéticamente los textos (haciendo que el orden de entrada no afecte). Transforma las parejas en "Violeta" (Azul + Rojo), "Naranja" (Amarillo + Rojo) o "Verde" (Amarillo + Azul), vacía color_secundario e imprime la confirmación.
 func combinar_colores():
 	var combinacion = [color_actual, color_secundario]
 	combinacion.sort()
