@@ -48,11 +48,16 @@ var muerto : bool = false
 ## Variable que guarda la animacion del PLayer.
 @onready var animacion_player : AnimatedSprite2D = $AnimatedSprite2D 
 
+## Variable que toma la direccion de la pocion con respecto al Player.
+var ultimo_sentido_pocion : float = 1.0
+
 ## Bucle de físicas principal del personaje
 func _physics_process(delta):
 	if muerto: return
 	var direccion_x = Input.get_axis("Izquierda", "Derecha")
 	direccion = Vector2(direccion_x, 0)
+	if direccion_x != 0:
+		ultimo_sentido_pocion = sign(direccion_x)
 	
 	
 	if is_on_floor() and Input.is_action_just_pressed("Saltar"):
@@ -168,6 +173,7 @@ func lanzar_pocion():
 		cooldown_player.start()
 		if instancia:
 			if instancia.lanzada: return
+			instancia.direccion = Vector2(ultimo_sentido_pocion, 0)
 			instancia.lanzada = true
 			instancia.reparent(get_tree().current_scene)
 			instancia.movimiento_pocion()

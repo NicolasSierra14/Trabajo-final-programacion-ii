@@ -67,6 +67,7 @@ func actualizar_visual_pocion():
 ## Configura el vector de velocidad inicial al momento del disparo.
 func movimiento_pocion():
 	# Asigna un vector base inicial (Vector2(50, 50)), define la velocidad en el eje X multiplicando la dirección por la velocidad horizontal (direccion.x * velocidad_horizontal), y carga en el eje Y el impulso vertical inicial negativo (velocidad_inicial_vertical).
+	
 	velocity = Vector2(50,50)
 	velocity.x = direccion.x * velocidad_horizontal
 	velocity.y = velocidad_inicial_vertical
